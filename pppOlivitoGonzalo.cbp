@@ -43,10 +43,6 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="nombre.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="nombre.h" />
 		<Unit filename="servicio.c">
 			<Option compilerVar="CC" />
 		</Unit>

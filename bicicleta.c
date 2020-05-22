@@ -235,6 +235,10 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
     }
     else
     {
+        system("cls");
+       printf("Usted selecciono la bicicleta: \n");
+             printf("ID        MARCA       TIPO     COLOR   RODADO \n");
+            mostrarBici(vec[esta],tipo,tamt,color,tamc);
         printf("1. Modificar tipo\n");
         printf("2. Modificar rodado\n");
         getIntRange(&eleccion,1,2,"Ingrese la opcion a modificar: ");
@@ -243,9 +247,11 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
         case 1:
             listarTipos(tipo,tamt);
             getIntRange(&vec[esta].idTipo,1000,1004, "Ingrese el nuevo tipo: ");
+            printf("Ha modificado con exito el tipo de la bicicleta\n");
             break;
         case 2:
             getFloatRange(0,999,&vec[esta].rodado,"Ingrese el nuevo rodado: ");
+            printf("Rodado modificado con exito\n");
             break;
             retorno = 1;
         }

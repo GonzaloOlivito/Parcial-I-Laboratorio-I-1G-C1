@@ -129,7 +129,8 @@ int altaBicicleta(eBicicleta vec[], int tam, eColor colores[], int tamc, eTipo t
             listarColores(colores,tamc);
             getIntRange(&vec[libre].idColor,5000,5004,"Ingrese el id color: ");
             getFloatRange(0,99,&vec[libre].rodado,"Ingrese el rodado (entre 0 y 99): ");
-            getIntRange(&vec[libre].idCliente,0,10,"Ingrese el id cliente: ");
+            //listarClientes(clientes,tamclientes);
+            //getIntRange(&vec[libre].idCliente,0,10,"Ingrese el id cliente: ");
             vec[libre].isEmpty=0;
             todoOk=1;
             printf("\nAlta exitosa! \n");

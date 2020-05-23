@@ -137,7 +137,7 @@
 	<string.h>
 	"color.h"
 
-1590192282 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\main.c
+1590194135 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -168,7 +168,7 @@
 	<string.h>
 	"tipo.h"
 
-1590191676 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.c
+1590194254 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -184,7 +184,7 @@
 	<conio.h>
 	<ctype.h>
 
-1590192295 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.c
+1590194530 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -197,6 +197,6 @@
 	"trabajo.h"
 	"servicio.h"
 
-1590192281 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.h
+1590193488 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.h
 	"trabajo.h"
 

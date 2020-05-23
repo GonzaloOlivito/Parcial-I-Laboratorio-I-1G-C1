@@ -16,3 +16,6 @@ void listadoBiciPorTipo(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColo
 void listadoBiciPorTipoyColor(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli);
 void colorMasElegido(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli);
 void mostrarTrabajoXBici(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli,eTrabajo trabajos[], int tamtrab, eServicio servicios[], int tams);
+void mostrarPlataGastadaEnBici(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli,eTrabajo trabajos[], int tamtrab, eServicio servicios[], int tams);
+void mostrarServicioABicis(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli,eTrabajo trabajos[], int tamtrab, eServicio servicios[], int tams);
+

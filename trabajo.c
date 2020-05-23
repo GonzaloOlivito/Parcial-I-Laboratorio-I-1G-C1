@@ -32,18 +32,19 @@ void inicializarTrabajo(eTrabajo trabajos[], int tamtrab)
 int buscarLibreTrabajo(eTrabajo trabajos[], int tamtrab)
 {
     int retorno=-1;
+
     for(int i=0; i<tamtrab; i++)
     {
         if(trabajos[i].isEmpty==1)
         {
             retorno=i;
+
             break;
         }
-        else
-        {
-            printf("No hay mas lugar para los trabajos");
-        }
+
+
     }
+
     return retorno;
 }
 
@@ -111,7 +112,7 @@ void mostrarTrabajo (eTrabajo trabajo, eServicio servicios[], int tams)
 {
     char servicioDes[20];
     cargarDescripcionServicio(servicios,tams,trabajo.idServicio,servicioDes);
-    printf("%4d    %8d  %10s     %.2d/%.2d/%d\n", trabajo.idTrabajo,trabajo.idBici,servicioDes,trabajo.fecha.dia,trabajo.fecha.mes
+    printf("%4d    %8d  %10s    %.2d/%.2d/%d\n", trabajo.idTrabajo,trabajo.idBici,servicioDes,trabajo.fecha.dia,trabajo.fecha.mes
                                                                                                             ,trabajo.fecha.anio);
 }
 /** \brief Funcion que muestra todos los trabajos
@@ -125,7 +126,7 @@ void mostrarTrabajos (eTrabajo trabajos[], int tamtrab, eServicio servicios[], i
 {
     system("cls");
     printf("** LISTADO TRABAJOS ** \n\n");
-    printf("ID TRABAJO  ID BICI  SERVICIO     FECHA\n");
+    printf("ID TRABAJO  ID BICI  SERVICIO   PRECIO  FECHA\n");
     int flag=-1;
     for(int i =0; i<tamtrab; i++)
     {

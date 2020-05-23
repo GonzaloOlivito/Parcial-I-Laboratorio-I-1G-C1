@@ -36,10 +36,13 @@ listadoBiciPorTipoyColor(bicicletas,tam,tipo,tamt,color,tamc,cliente,tamcli);
         case 'f':
 mostrarTrabajoXBici(bicicletas,tam,tipo,tamt,color,tamc,cliente,tamcli,trabajos,tamtrab,servicios,tams);
             break;
-        case 'h':
-
-            break;
         case 'g':
+    mostrarPlataGastadaEnBici(bicicletas,tam,tipo,tamt,color,tamc,cliente,tamcli,trabajos,tamtrab,servicios,tams);
+            break;
+        case 'h':
+            mostrarServicioABicis(bicicletas,tam,tipo,tamt,color,tamc,cliente,tamcli,trabajos,tamtrab,servicios,tams);
+            break;
+        case 'i':
             printf("Confirma salir: s/n: ");
             fflush(stdin);
             scanf("%c",&respuesta);
@@ -68,8 +71,9 @@ char menuInformes()
     printf("D. Informe bicicletas separadas por tipo\n");
     printf("E. Informe cantidad de bicicletas del mismo color y tipo\n");
     printf("F. Mostrar trabajo por bicicleta\n");
-    printf("\n");
-    printf("G. Salir\n");
+    printf("G. Mostrar plata gastada en bicicleta\n");
+    printf("H. Mostrar servicio a bicicletas \n");
+    printf("I. Salir\n");
 
     printf("Ingrese una respuesta: ");
     fflush(stdin);
@@ -259,3 +263,47 @@ void mostrarTrabajoXBici(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eCol
     }
 
 }
+
+void mostrarPlataGastadaEnBici(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli,eTrabajo trabajos[], int tamtrab, eServicio servicios[], int tams)
+{
+    system("cls");
+    int idBici;
+    mostrarBicis(vec,tam,tipo,tamt,color,tamc,cliente,tamcli);
+    getIntRange(&idBici,2000,2020,"Ingrese el id de la bicicleta a consultar plata gastada: ");
+    float acumulador=0;
+
+    printf("Se realizaron los siguientes servicios: \n");
+
+    for(int i=0;i<tamtrab;i++)
+    {
+        if(trabajos[i].isEmpty==0 && trabajos[i].idBici==idBici)
+        {
+            mostrarTrabajo(trabajos[i],servicios,tams);
+            acumulador=servicios[i].precio+acumulador;
+        }
+    }
+
+    printf("Se gasto %.2f\n",acumulador);
+
+}
+
+void mostrarServicioABicis(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcli,eTrabajo trabajos[], int tamtrab, eServicio servicios[], int tams)
+{
+    system("cls");
+    int idServicio;
+    char descripSer[20];
+   listarServicios(servicios,tams);
+    getIntRange(&idServicio,20000,20004,"Ingrese el id del servicio a consultar: ");
+    cargarDescripcionServicio(servicios,tams,idServicio,descripSer);
+    printf("Las bicicletas a las que se realizo el servicio %s son las siguientes: \n",descripSer);
+    printf("ID TRABAJO  ID BICI  SERVICIO     FECHA\n");
+    for(int i=0;i<tamtrab;i++)
+    {
+        if(trabajos[i].isEmpty==0 && trabajos[i].idServicio==idServicio )
+        {
+            mostrarTrabajo(trabajos[i],servicios,tams);
+        }
+
+    }
+}
+

@@ -33,7 +33,7 @@ eTrabajo trabajos[TAMTRAB]={{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,
     eCliente clientes[TAMCLIENTE]={{1,"Gonzalo",'m'},{2,"Martin",'m'},{3,"Federico",'m'},{4,"Mar",'f'},{5,"Estefania",'f'}
                                 ,{6,"Maria",'f'},{7,"Sabrina",'f'},{8,"Marcos",'m'}};
     inicializarBicicletas(bicis,TAM);
-    //inicializarTrabajo(trabajos,TAMTRAB);
+    // inicializarTrabajo(trabajos,TAMTRAB); // ACTIVAR EN CASO DE QUERER DAR DE ALTA UN NUEVO TRABAJO
 
     if(hardcoreo(bicis,TAMHARD))
     {

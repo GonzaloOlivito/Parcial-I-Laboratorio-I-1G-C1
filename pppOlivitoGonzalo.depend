@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1590178026 source:c:\users\lenovo\documents\programacion\parcialsabado\bicicleta.c
+1590180795 source:c:\users\lenovo\documents\programacion\parcialsabado\bicicleta.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,6 +7,7 @@
 	"utn.h"
 	"tipo.h"
 	"color.h"
+	"cliente.h"
 	"datawarehouse.h"
 
 1590111306 source:c:\users\lenovo\documents\programacion\parcialsabado\color.c
@@ -30,17 +31,18 @@
 
 1589722149 c:\users\lenovo\documents\programacion\parcialsabado\utn.h
 
-1590171939 c:\users\lenovo\documents\programacion\parcialsabado\datawarehouse.h
+1590180544 c:\users\lenovo\documents\programacion\parcialsabado\datawarehouse.h
 
 1590104204 c:\users\lenovo\documents\programacion\parcialsabado\tipo.h
 
 1590104117 c:\users\lenovo\documents\programacion\parcialsabado\color.h
 
-1590113843 c:\users\lenovo\documents\programacion\parcialsabado\bicicleta.h
+1590180801 c:\users\lenovo\documents\programacion\parcialsabado\bicicleta.h
 	"tipo.h"
 	"color.h"
+	"cliente.h"
 
-1590177827 source:c:\users\lenovo\documents\programacion\parcialsabado\main.c
+1590180885 source:c:\users\lenovo\documents\programacion\parcialsabado\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -50,6 +52,7 @@
 	"bicicleta.h"
 	"servicio.h"
 	"trabajo.h"
+	"cliente.h"
 
 1590062141 c:\users\lenovo\documents\programacion\parcialsabado\servicio.h
 
@@ -59,7 +62,7 @@
 	<string.h>
 	"servicio.h"
 
-1590177390 source:c:\users\lenovo\documents\programacion\parcialsabado\trabajo.c
+1590180816 source:c:\users\lenovo\documents\programacion\parcialsabado\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -68,7 +71,7 @@
 	"servicio.h"
 	"utn.h"
 
-1590148236 c:\users\lenovo\documents\programacion\parcialsabado\trabajo.h
+1590180871 c:\users\lenovo\documents\programacion\parcialsabado\trabajo.h
 	"servicio.h"
 	"bicicleta.h"
 
@@ -88,15 +91,53 @@
 
 1590174658 source:c:\users\lenovo\documents\programacion\parcialsabado\nombre.c
 
-1590111306 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\color.c
+1590180074 c:\users\lenovo\documents\programacion\parcialsabado\cliente.h
+
+1590180390 source:c:\users\lenovo\documents\programacion\parcialsabado\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1590190781 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\bicicleta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"bicicleta.h"
+	"utn.h"
+	"tipo.h"
+	"color.h"
+	"cliente.h"
+	"datawarehouse.h"
+
+1590180801 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\bicicleta.h
+	"tipo.h"
+	"color.h"
+	"cliente.h"
+
+1590104204 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\tipo.h
+
+1590104117 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\color.h
+
+1590180074 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\cliente.h
+
+1589722149 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\utn.h
+
+1590190662 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\datawarehouse.h
+
+1590180390 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cliente.h"
+
+1590186010 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\color.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"color.h"
 
-1590104117 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\color.h
-
-1590177827 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\main.c
+1590192282 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -106,18 +147,12 @@
 	"bicicleta.h"
 	"servicio.h"
 	"trabajo.h"
-
-1589722149 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\utn.h
-
-1590104204 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\tipo.h
-
-1590113843 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\bicicleta.h
-	"tipo.h"
-	"color.h"
+	"cliente.h"
+	"informes.h"
 
 1590062141 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\servicio.h
 
-1590148236 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.h
+1590190680 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.h
 	"servicio.h"
 	"bicicleta.h"
 
@@ -133,7 +168,7 @@
 	<string.h>
 	"tipo.h"
 
-1590177390 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.c
+1590191676 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -149,15 +184,19 @@
 	<conio.h>
 	<ctype.h>
 
-1590178753 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\bicicleta.c
+1590192295 source:c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"bicicleta.h"
-	"utn.h"
-	"tipo.h"
 	"color.h"
-	"datawarehouse.h"
+	"informes.h"
+	"tipo.h"
+	"cliente.h"
+	"utn.h"
+	"trabajo.h"
+	"servicio.h"
 
-1590171939 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\datawarehouse.h
+1590192281 c:\users\lenovo\desktop\parcial-i-laboratorio-i-1g-c1\informes.h
+	"trabajo.h"
 

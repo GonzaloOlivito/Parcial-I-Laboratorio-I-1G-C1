@@ -1,1 +1,0 @@
-# Parcial-I-Laboratorio-I-1G-C1

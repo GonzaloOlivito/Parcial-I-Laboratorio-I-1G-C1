@@ -5,6 +5,8 @@
 #include "bicicleta.h"
 #include "servicio.h"
 #include "utn.h"
+
+
 /** \brief Funcion para inicializar en 1 todos los trabajos
  *
  * \param trabajos[] eTrabajo
@@ -53,7 +55,7 @@ int buscarLibreTrabajo(eTrabajo trabajos[], int tamtrab)
  *
  */
 int altaTrabajo(int idTrabajo, eTrabajo trabajos[], int tamtrab, eBicicleta bicicletas[], int tam, eServicio servicios[], int tams, eTipo tipos[],
-                int tamt, eColor colores[], int tamc)
+                int tamt, eColor colores[], int tamc, eCliente cliente[], int tamcliente)
 {
     system("cls");
     printf("**ALTA TRABAJO**\n\n");
@@ -70,7 +72,7 @@ int altaTrabajo(int idTrabajo, eTrabajo trabajos[], int tamtrab, eBicicleta bici
     {
 
 
-        mostrarBicis(bicicletas,tam,tipos,tamt,colores,tamc);
+        mostrarBicis(bicicletas,tam,tipos,tamt,colores,tamc,cliente,tamcliente);
         getIntRange(&auxIdBici,0,9999,"Ingrese el ID de la bicicleta a seleccionar (entre 0 y 9999): ");
         estaBici=buscarBicicleta(auxIdBici,bicicletas,tam);
         if(estaBici ==-1)

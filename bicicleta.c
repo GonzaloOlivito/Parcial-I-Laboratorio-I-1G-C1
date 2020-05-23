@@ -5,6 +5,7 @@
 #include "utn.h"
 #include "tipo.h"
 #include "color.h"
+#include "cliente.h"
 #include "datawarehouse.h"
 
 /** \brief Funcion que engloba todas las opciones del programa
@@ -27,7 +28,8 @@ char menuOpciones()
     printf("G.Listar Servicios\n");
     printf("H.Alta trabajo\n");
     printf("I.Mostrar trabajos\n");
-    printf("J.Salir\n");
+    printf("J.Informes\n");
+    printf("K.Salir\n");
     printf("Ingrese la opcion deseada: ");
     fflush(stdin);
     scanf("%c", &opcion);
@@ -102,7 +104,7 @@ int buscarBicicleta(int id, eBicicleta vec[], int tam)
  * \return int retorna 0 en caso de error y 1 en caso de dar de alta
  *
  */
-int altaBicicleta(eBicicleta vec[], int tam, eColor colores[], int tamc, eTipo tipos[], int tamt)
+int altaBicicleta(eBicicleta vec[], int tam, eColor colores[], int tamc, eTipo tipos[], int tamt, eCliente cliente[], int tamcliente)
 {
     system("cls");
     printf("**ALTA BICICLETA**\n\n");
@@ -127,6 +129,7 @@ int altaBicicleta(eBicicleta vec[], int tam, eColor colores[], int tamc, eTipo t
             listarColores(colores,tamc);
             getIntRange(&vec[libre].idColor,5000,5004,"Ingrese el id color: ");
             getFloatRange(0,99,&vec[libre].rodado,"Ingrese el rodado (entre 0 y 99): ");
+            getIntRange(&vec[libre].idCliente,0,10,"Ingrese el id cliente: ");
             vec[libre].isEmpty=0;
             todoOk=1;
             printf("\nAlta exitosa! \n");
@@ -147,13 +150,15 @@ int altaBicicleta(eBicicleta vec[], int tam, eColor colores[], int tamc, eTipo t
  * \return no retorna nada
  *
  */
-void mostrarBici (eBicicleta bici, eTipo tipoBici[], int tamTipo, eColor colorBici[], int tamColor)
+void mostrarBici (eBicicleta bici, eTipo tipoBici[], int tamTipo, eColor colorBici[], int tamColor, eCliente cliente[], int tamcliente)
 {
     char tipoDes[20];
     char colorDes[20];
+    char nombreDes[20];
     cargarDescripcionTipo(tipoDes,tipoBici,tamTipo,bici.idTipo);
     cargarDescripcionColor(bici.idColor,colorDes,colorBici,tamColor);
-    printf("%d   %9s    %8s %8s    %.2f\n", bici.id,bici.marca,tipoDes,colorDes,bici.rodado);
+    cargarDescripcionCliente(nombreDes,cliente,tamcliente,bici.idCliente);
+    printf("%d   %9s    %8s %8s    %.2f  %10s  \n", bici.id,bici.marca,tipoDes,colorDes,bici.rodado,nombreDes);
 }
 
 /** \brief Funcion para mostrar todas las bicicletas del vector
@@ -163,17 +168,17 @@ void mostrarBici (eBicicleta bici, eTipo tipoBici[], int tamTipo, eColor colorBi
  * \return No devuelve nada la funcion
  *
  */
-void mostrarBicis (eBicicleta vec[], int tam, eTipo tipoBici[], int tamTipo, eColor colorBici[], int tamColor)
+void mostrarBicis (eBicicleta vec[], int tam, eTipo tipoBici[], int tamTipo, eColor colorBici[], int tamColor, eCliente cliente[], int tamcliente)
 {
     system("cls");
     printf("** LISTADO BICIS ** \n\n");
-    printf("ID        MARCA       TIPO     COLOR   RODADO \n");
+    printf("ID        MARCA       TIPO     COLOR   RODADO    CLIENTE\n");
     int flag=-1;
     for(int i =0; i<tam; i++)
     {
         if(vec[i].isEmpty==0)
         {
-            mostrarBici(vec[i],tipoBici,tamTipo,colorBici,tamColor);
+            mostrarBici(vec[i],tipoBici,tamTipo,colorBici,tamColor,cliente,tamcliente);
             flag=1;
         }
     }
@@ -198,6 +203,7 @@ int hardcoreo(eBicicleta vec[], int tam)
         vec[i].id=ids[i];
         vec[i].idColor=idsColor[i];
         vec[i].idTipo=idsTipo[i];
+        vec[i].idCliente=idsCliente[i];
         strcpy(vec[i].marca,marcas[i]);
         vec[i].rodado=rodados[i];
         vec[i].isEmpty=0;
@@ -217,7 +223,7 @@ int hardcoreo(eBicicleta vec[], int tam)
  * \return int Retorna -1 en caso de error y 1 en caso de modificar exitosamente
  *
  */
-int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc)
+int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcliente)
 {
     int id;
     int eleccion;
@@ -225,7 +231,7 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
     int esta;
     system("cls");
     printf("***MENU MODIFICACION***\n\n");
-    mostrarBicis(vec,tam,tipo,tamt,color,tamc);
+    mostrarBicis(vec,tam,tipo,tamt,color,tamc,cliente,tamcliente);
 
     getIntRange(&id,0,9999,"Ingrese el id a modificar: ");
     esta=buscarBicicleta(id,vec,tam);
@@ -236,9 +242,8 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
     else
     {
         system("cls");
-       printf("Usted selecciono la bicicleta: \n");
-             printf("ID        MARCA       TIPO     COLOR   RODADO \n");
-            mostrarBici(vec[esta],tipo,tamt,color,tamc);
+        printf("ID        MARCA       TIPO     COLOR   RODADO    CLIENTE\n");
+        mostrarBici(vec[esta],tipo,tamt,color,tamc,cliente,tamcliente);
         printf("1. Modificar tipo\n");
         printf("2. Modificar rodado\n");
         getIntRange(&eleccion,1,2,"Ingrese la opcion a modificar: ");
@@ -247,11 +252,11 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
         case 1:
             listarTipos(tipo,tamt);
             getIntRange(&vec[esta].idTipo,1000,1004, "Ingrese el nuevo tipo: ");
-            printf("Ha modificado con exito el tipo de la bicicleta\n");
+            printf("Tipo modificado con exito \n");
             break;
         case 2:
             getFloatRange(0,999,&vec[esta].rodado,"Ingrese el nuevo rodado: ");
-            printf("Rodado modificado con exito\n");
+            printf("Rodado modificado con exito \n");
             break;
             retorno = 1;
         }
@@ -271,7 +276,7 @@ int modificarBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor
  * \return int Devuelve -1 en caso de error y 1 en caso de lograr la baja logica
  *
  */
-int bajaBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc)
+int bajaBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor color[], int tamc, eCliente cliente[], int tamcliente)
 {
     int id;
     char eleccion;
@@ -279,7 +284,7 @@ int bajaBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor colo
     int esta;
     system("cls");
     printf("***MENU BAJA***\n\n");
-    mostrarBicis(vec,tam,tipo,tamt,color,tamc);
+    mostrarBicis(vec,tam,tipo,tamt,color,tamc,cliente,tamcliente);
 
     getIntRange(&id,0,9999,"Ingrese el id a dar de baja: ");
     esta=buscarBicicleta(id,vec,tam);
@@ -291,8 +296,8 @@ int bajaBicicleta(eBicicleta vec[], int tam, eTipo tipo[], int tamt, eColor colo
     {
         system("cls");
         printf("\nSelecciono: \n");
-        printf("ID        MARCA       TIPO     COLOR   RODADO \n");
-        mostrarBici(vec[esta],tipo,tam,color,tamc);
+        printf("ID        MARCA       TIPO     COLOR   RODADO  NOMBRE \n");
+        mostrarBici(vec[esta],tipo,tam,color,tamc,cliente,tamcliente);
         getChar(3,&eleccion,"Confirma baja? s/n");
         if(eleccion == 's')
         {

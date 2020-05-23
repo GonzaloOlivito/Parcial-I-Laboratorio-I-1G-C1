@@ -12,10 +12,10 @@
  */
 void listarColores(eColor colores[], int tamc)
 {
-    printf("ID   COLOR\n");
+    printf("ID      COLOR\n");
   for(int i=0;i<tamc;i++)
     {
-        printf("%d   %8s \n", colores[i].id,colores[i].nombreColor);
+        printf("%d   %6s \n", colores[i].id,colores[i].nombreColor);
     }
 }
 

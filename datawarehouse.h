@@ -4,7 +4,7 @@
 
 
 #endif // DATAWAREHOUSE_H_INCLUDED
-char marcas[][20]= {"Ford","Jax","Mida","Danx","Sofitel","Gstn","Didso","Miñasa","Valente","usis"};
+char marcas[][20]= {"Ford","Jax","Mida","Danx","Sofitel","Gstn","Didso","Miniasa"};
 char apellidos[][20]={"Perez","Gonzalez","Blanco","Suarez","Garcia","Morales","Alvarez","Puerta","Oliveto","Gimenez"};
 char sexos[]={'m','f','m','f','f','m','m','f','f','m'};
 int edades[]={22,31,21,23,27,28,23,34,40,31};
@@ -14,3 +14,5 @@ int meses[]={1,2,2,3,8,5,12,12,10,9};
 int ids[]={2000,2001,2002,2003,2004,2005,2006,2007,2008,2009};
 int idsColor[]={5000,5002,5003,5001,5001,5002,5003,5000,5001,5002};
 int idsTipo[]={1000,1001,1003,1002,1003,1001,1002,1003,1004,1004};
+int idsCliente[]={1,2,2,3,8,5,7,4,8,6};
+int idsTrabajo[]={50,51,52,53,54,55};

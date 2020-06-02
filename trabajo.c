@@ -18,7 +18,11 @@ void inicializarTrabajo(eTrabajo trabajos[], int tamtrab)
 {
     for(int i=0; i<tamtrab; i++)
     {
-        trabajos[i].isEmpty=1;
+        if(trabajos[i].isEmpty!=0)
+        {
+            trabajos[i].isEmpty=1;
+        }
+
     }
 }
 

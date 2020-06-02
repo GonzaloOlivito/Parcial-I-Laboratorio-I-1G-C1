@@ -17,6 +17,7 @@
 #define TAMHARD 8
 #define TAMS 4
 #define TAMTRAB 8
+
 #define TAMCLIENTE 8
 int main()
 {
@@ -25,22 +26,24 @@ int main()
     int idTrab=50;
     int flag=-1;
     eBicicleta bicis[TAM];
-    eTipo tipos[TAMT]={{1000,"Rutera"},{1001,"Carrera"},{1002,"Mountain"},{1003,"BMX"}};
-    eColor colores[TAMC]={{5000,"Gris"},{5001,"Negro"},{5002,"Blanco"},{5003,"Azul"},{5004,"Rojo"}};
-    eServicio servicios[TAMS]={{20000,"Limpieza",250},{20001,"Parche",300},{20002,"Centrado",400},{20003,"Cadena",350}};
-eTrabajo trabajos[TAMTRAB]={{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,2,2018}},{2002,20002,52,0,{8,9,2020}},{2000,20002,53,0,{12,12,2017}},{2008,20003,54,0,{12,12,2017}}
-                                ,{2000,20003,55,0,{25,6,2020}},{2004,20001,56,0,{12,7,2020}},{2009,20000,56,0,{25,12,2020}}};
-    eCliente clientes[TAMCLIENTE]={{1,"Gonzalo",'m'},{2,"Martin",'m'},{3,"Federico",'m'},{4,"Mar",'f'},{5,"Estefania",'f'}
-                                ,{6,"Maria",'f'},{7,"Sabrina",'f'},{8,"Marcos",'m'}};
+    eTipo tipos[TAMT]= {{1000,"Rutera"},{1001,"Carrera"},{1002,"Mountain"},{1003,"BMX"}};
+    eColor colores[TAMC]= {{5000,"Gris"},{5001,"Negro"},{5002,"Blanco"},{5003,"Azul"},{5004,"Rojo"}};
+    eServicio servicios[TAMS]= {{20000,"Limpieza",250},{20001,"Parche",300},{20002,"Centrado",400},{20003,"Cadena",350}};
+    eTrabajo trabajos[TAMTRAB]= {{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,2,2018}},{2002,20002,52,0,{8,9,2020}},{2000,20002,53,0,{12,12,2017}},{2008,20003,54,0,{12,12,2017}}
+        ,{2000,20003,55,0,{25,6,2020}},{2004,20001,56,0,{12,7,2020}},{2009,20000,56,0,{25,12,2020}}};
+    eCliente clientes[TAMCLIENTE]= {{1,"Gonzalo",'m'},{2,"Martin",'m'},{3,"Federico",'m'},{4,"Mar",'f'},{5,"Estefania",'f'}
+        ,{6,"Maria",'f'},{7,"Sabrina",'f'},{8,"Marcos",'m'}
+    };
     inicializarBicicletas(bicis,TAM);
-    // inicializarTrabajo(trabajos,TAMTRAB); // ACTIVAR EN CASO DE QUERER DAR DE ALTA UN NUEVO TRABAJO
+    inicializarTrabajo(trabajos,TAMTRAB);
+
 
     if(hardcoreo(bicis,TAMHARD))
     {
         flag=1;
     }
 
-     do
+    do
     {
 
         switch(menuOpciones())
@@ -56,18 +59,20 @@ eTrabajo trabajos[TAMTRAB]={{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,
             {
                 printf("Primero debe dar de alta una bicicleta\n");
 
-            }else
+            }
+            else
             {
                 modificarBicicleta(bicis,TAM,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE);
             }
 
             break;
         case 'c':
-              if(flag==-1)
+            if(flag==-1)
             {
                 printf("Primero debe dar de alta una bicicleta\n");
 
-            }else
+            }
+            else
             {
                 bajaBicicleta(bicis,TAM,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE);
             }
@@ -75,7 +80,7 @@ eTrabajo trabajos[TAMTRAB]={{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,
             break;
         case 'd':
             ordenar(bicis,TAM,tipos,TAMT,colores,TAMC);
-             mostrarBicis(bicis,TAM,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE);
+            mostrarBicis(bicis,TAM,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE);
             break;
         case 'e':
             system("cls");
@@ -93,8 +98,9 @@ eTrabajo trabajos[TAMTRAB]={{2009,20001,50,0,{12,12,2019}},{2001,20003,51,0,{10,
         case 'h':
             if(flag==-1)
             {
-            printf("Primero debe dar de alta una bicicleta");
-            }else if(altaTrabajo(idTrab,trabajos,TAMTRAB,bicis,TAM,servicios,TAMS,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE))
+                printf("Primero debe dar de alta una bicicleta");
+            }
+            else if(altaTrabajo(idTrab,trabajos,TAMTRAB,bicis,TAM,servicios,TAMS,tipos,TAMT,colores,TAMC,clientes,TAMCLIENTE))
             {
                 idTrab++;
             }
